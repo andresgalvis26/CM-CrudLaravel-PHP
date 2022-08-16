@@ -1,3 +1,31 @@
+
+# 👨🏼‍💻 CM Crud in Laravel - PHP 👨🏼‍💻
+
+Web application built from scratch in framework Laravel of PHP that allows to administrators create, visualize, update and delete products in a shopping list.
+
+
+## Deployment
+
+To deploy this project was used:
+
+```bash
+  npm run deploy
+```
+
+
+### Remember:
+- It was necessary configure the command to run projects in Laravel
+```bash
+  php artisan serve
+```
+- Create a copy of database in phpMyAdmin to upload in the hosting.
+
+## Authors
+- [@andresgalvis26](https://www.github.com/andresgalvis26)
+
+#
+
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
 <p align="center">
@@ -62,4 +90,8 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
-# CM-CrudLaravel-PHP
+
+### Tutorial followed:
+```bash
+https://youtu.be/aYfRTdaEY3s
+```
