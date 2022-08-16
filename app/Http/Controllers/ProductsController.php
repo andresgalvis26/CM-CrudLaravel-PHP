@@ -1,0 +1,63 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use App\Models\Product;
+
+class ProductsController extends Controller
+{
+    public function index() {
+        // return '<h2>Hola Mundo</h2>';
+        
+        $products = Product::all(); // Seleccionar todos los registros
+
+        return view('products.index', compact('products')); // Que los retorne a la carpeta products (es decir, a index)
+    }
+
+    public function create() {
+
+        return view('products.create');
+
+    }
+
+    public function store(Request $request) {
+
+        $product = new Product();
+        $product->title = $request->title;
+        $product->country = $request->country;
+        $product->price = $request->price;
+
+        $product->save();
+
+        return redirect()->route('products.index');
+
+    }
+
+    public function destroy($id) {
+        
+        $product = Product::find($id);
+
+        $product->delete();
+
+        return redirect()->route('products.index');
+    }
+
+    
+    public function edit($id) {
+
+        $product = Product::find($id);
+
+        return view('products.edit', compact('product'));
+    }
+
+
+    public function update(Request $request, $id) {
+
+        $product = Product::find($id);
+        
+        $product->update($request->all());
+
+        return redirect()->route('products.index');
+    }
+}
