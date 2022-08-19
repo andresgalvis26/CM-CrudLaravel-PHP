@@ -8,7 +8,6 @@ use App\Models\Product;
 class ProductsController extends Controller
 {
     public function index() {
-        // return '<h2>Hola Mundo</h2>';
         
         $products = Product::all(); // Seleccionar todos los registros
 
@@ -34,16 +33,6 @@ class ProductsController extends Controller
 
     }
 
-    public function destroy($id) {
-        
-        $product = Product::find($id);
-
-        $product->delete();
-
-        return redirect()->route('products.index');
-    }
-
-    
     public function edit($id) {
 
         $product = Product::find($id);
@@ -60,4 +49,15 @@ class ProductsController extends Controller
 
         return redirect()->route('products.index');
     }
+    
+    public function destroy($id) {
+        
+        $product = Product::find($id);
+
+        $product->delete();
+
+        return redirect()->route('products.index');
+    }
+
+    
 }
