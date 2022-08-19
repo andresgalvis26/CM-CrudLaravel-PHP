@@ -6,19 +6,20 @@ Web application built from scratch in framework Laravel of PHP that allows to ad
 
 ## Deployment
 
-To deploy this project was used:
+To deploy this project was used Heroku:
 
 ```bash
-  npm run deploy
+  https://cm-crudlaravel-php.herokuapp.com/products
 ```
 
 
-### Remember:
+## Remember:
 - It was necessary configure the command to run projects in Laravel
 ```bash
   php artisan serve
 ```
 - Create a copy of database in phpMyAdmin to upload in the hosting.
+- In localhost, only have to run the migrations to create all tables neccessary and then insert the values.
 
 ## Authors
 - [@andresgalvis26](https://www.github.com/andresgalvis26)
