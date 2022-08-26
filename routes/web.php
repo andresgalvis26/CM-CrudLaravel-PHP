@@ -7,14 +7,20 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+// Route::get('/', [ProductsController::class, 'index']) -> name('products.index');
 
 Route::resource('products', ProductsController::class);
 
-/* Route::get('/products', [ProductsController::class, 'index']) -> name('products.index');
-
+/* 
 Route::get('products/create', [ProductsController::class, 'create']) -> name ('products.create');
 
-Route::post('products/create', [ProductsController::class, 'store']) -> name ('products.store'); */
-
+Route::post('products/create', [ProductsController::class, 'store']) -> name ('products.store');
+*/
 
 ?>
+
+

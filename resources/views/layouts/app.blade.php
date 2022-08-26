@@ -20,9 +20,25 @@
 <body class="bg-slate-100 text-gray-800">
 
     <nav class="h-16 flex justify-end py-4 px-16">
-        <a href="{{ route('products.index') }}" class="border border-blue-500 rounded px-4 pt-1 h-10 bg-white text-blue-500 font-semibold mx-2 ">Products</a>
+        <a id="navbarDropdown" class="text-white text-left rounded px-4 pt-1 h-10 bg-green-500 font-semibold mx-2 hover:bg-green-900" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+            {{ 'User: ' . Auth::user()->name }}
+        </a>
+
+        <a href="{{ route('products.index') }}" class="text-white rounded px-4 pt-1 h-10 bg-blue-500 font-semibold mx-2 hover:bg-blue-700">Products</a>
 
         <a href=" {{ route('products.create') }}" class="text-white rounded px-4 pt-1 h-10 bg-blue-500 font-semibold mx-2 hover:bg-blue-700">Create</a>
+
+        
+            <a class="text-white rounded px-4 pt-1 h-10 bg-red-500 font-semibold mx-2 hover:bg-red-900" href="{{ route('logout') }}"
+                onclick="event.preventDefault();
+                            document.getElementById('logout-form').submit();">
+                {{ __('Logout') }}
+            </a>
+
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                @csrf
+            </form>
+        
 
     </nav>
 
